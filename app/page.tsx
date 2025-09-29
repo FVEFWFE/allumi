@@ -503,6 +503,40 @@ export default function Home() {
             <p style={{ fontSize: '11px', opacity: 0.8, textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
               Village girl trying her best in the big city 🌾
             </p>
+
+            {/* Bas Watermark Section */}
+            <div style={{ marginTop: '24px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+              <p style={{ fontSize: '12px', marginBottom: '12px', opacity: 0.7, textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
+                Created in partnership with
+              </p>
+              <a
+                href="https://baspalms.com?utm_source=allumi&utm_medium=footer&utm_campaign=model_sites"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  textDecoration: 'none',
+                  opacity: 0.9,
+                  transition: 'opacity 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.opacity = '1'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.opacity = '0.9'
+                }}
+              >
+                <img
+                  src="/bassignature.png"
+                  alt="Bas Palms"
+                  style={{
+                    maxWidth: '150px',
+                    height: 'auto',
+                    filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5))'
+                  }}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
