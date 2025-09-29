@@ -89,10 +89,10 @@ export default function Home() {
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)'
           }}>
             <p style={{ color: '#f9a8d4', fontSize: '14px', fontWeight: 'bold', marginBottom: '4px', textShadow: '0 3px 6px rgba(0,0,0,0.95)' }}>
-              💕 Your Thai Princess Living in Paradise 💕
+              🌸 Village Girl in the City • Chasing Dreams 🌸
             </p>
             <p style={{ color: '#f3f4f6', fontSize: '12px', textShadow: '0 2px 5px rgba(0,0,0,0.95)' }}>
-              Exclusive Content • Real Moments • Living My Best Life in Thailand
+              Shy but curious • Matcha & anime lover • Your support means everything
             </p>
           </div>
 
@@ -117,7 +117,7 @@ export default function Home() {
               marginBottom: '20px',
               textShadow: '0 3px 6px rgba(0,0,0,0.9)'
             }}>
-              22 • Thai • Content Creator
+              22 • Thai • Village girl 🌾
             </p>
             <div style={{ marginBottom: '24px', lineHeight: '1.8' }}>
               <p style={{
@@ -127,7 +127,7 @@ export default function Home() {
                 marginBottom: '8px',
                 textShadow: '0 2px 5px rgba(0,0,0,0.8)'
               }}>
-                Top 0.1% Creator • $30K/Month
+                Top 0.1% Creator 💕 Still learning
               </p>
               <p style={{
                 color: '#e5e7eb',
@@ -135,9 +135,9 @@ export default function Home() {
                 lineHeight: '1.8',
                 textShadow: '0 2px 4px rgba(0,0,0,0.8)'
               }}>
-                Living between Thailand & Kenya<br/>
-                Creating authentic intimate content<br/>
-                Your favorite Asian fantasy
+                Moved from countryside to Bangkok<br/>
+                Sharing my journey with you<br/>
+                Dog mom wannabe 🐕 • Anime addict
               </p>
             </div>
           </div>
@@ -187,10 +187,10 @@ export default function Home() {
               }}>
               <div>
                 <h3 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '4px', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
-                  💕 Fansly - Main Page
+                  💕 Fansly - Support My Journey
                 </h3>
                 <p style={{ fontSize: '14px', opacity: 0.95, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
-                  Exclusive POV content • Custom requests • Daily posts
+                  Help me stay in the city • Intimate moments • I reply to everyone
                 </p>
               </div>
               <span style={{ fontSize: '24px' }}>→</span>
@@ -229,7 +229,7 @@ export default function Home() {
                   📹 ManyVids Store
                 </h3>
                 <p style={{ fontSize: '14px', opacity: 0.9, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
-                  Premium videos • Instant downloads • Special bundles
+                  My first videos • Still shy • Learning what you like
                 </p>
               </div>
               <span style={{ fontSize: '20px' }}>→</span>
@@ -268,7 +268,7 @@ export default function Home() {
                   🔥 PornHub Channel
                 </h3>
                 <p style={{ fontSize: '14px', opacity: 0.9, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
-                  Free previews • Follow for updates
+                  Free previews • Please be gentle with comments
                 </p>
               </div>
               <span style={{ fontSize: '20px' }}>→</span>
@@ -448,7 +448,7 @@ export default function Home() {
               letterSpacing: '1px',
               textShadow: '0 3px 6px rgba(0,0,0,0.95)'
             }}>
-              Spoil Your Princess
+              Help Me Achieve My Dreams
             </h2>
 
             {/* Wishlist */}
@@ -481,7 +481,7 @@ export default function Home() {
                   🎁 My Wishlist
                 </h3>
                 <p style={{ fontSize: '13px', opacity: 0.9, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
-                  Spoil me & get special rewards
+                  Help me get my first dog! 🐕
                 </p>
               </div>
               <span style={{ fontSize: '18px' }}>→</span>
@@ -534,7 +534,7 @@ export default function Home() {
             textAlign: 'center'
           }}>
             <p style={{ color: '#e5e7eb', fontSize: '14px', marginBottom: '8px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>
-              🎬 Filmed by My Partner
+              🎬 My boyfriend helps me film
             </p>
             <a href="https://baspalms.com"
               target="_blank"
@@ -571,7 +571,7 @@ export default function Home() {
               © 2025 TinyAllumi • All Rights Reserved
             </p>
             <p style={{ fontSize: '11px', opacity: 0.8, textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
-              Living my best life in paradise 🌴
+              Village girl trying her best in the big city 🌾
             </p>
           </div>
         </div>
