@@ -98,6 +98,31 @@ export default function Home() {
 
           {/* Profile Section */}
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+            {/* Profile Photo */}
+            <div style={{
+              width: '150px',
+              height: '150px',
+              margin: '0 auto 20px',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              border: '4px solid rgba(236, 72, 153, 0.4)',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)',
+              background: 'linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(168, 85, 247, 0.2))',
+            }}>
+              <img
+                src="/allumi-profile.jpg"
+                alt="TinyAllumi"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+                onError={(e) => {
+                  // Fallback to placeholder if image doesn't exist
+                  e.currentTarget.src = '/placeholder-user.jpg'
+                }}
+              />
+            </div>
             <h1 style={{
               fontSize: '48px',
               fontWeight: 'bold',
