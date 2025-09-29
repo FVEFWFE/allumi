@@ -1,0 +1,20 @@
+# Block all search engines from /videos
+User-agent: *
+Disallow: /videos/
+Disallow: /videos
+
+# Block specific bots completely
+User-agent: Googlebot
+Disallow: /videos/
+
+User-agent: Bingbot
+Disallow: /videos/
+
+User-agent: Slurp
+Disallow: /videos/
+
+User-agent: DuckDuckBot
+Disallow: /videos/
+
+User-agent: Baiduspider
+Disallow: /videos/
