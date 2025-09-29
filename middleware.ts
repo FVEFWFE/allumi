@@ -5,9 +5,9 @@ export function middleware(request: NextRequest) {
   // Get country from Vercel's geo detection
   const country = request.geo?.country || request.headers.get('x-vercel-ip-country')
 
-  // Block Thailand IPs
-  if (country === 'TH') {
-    return NextResponse.redirect('https://google.com')
+  // Redirect Thailand and Netherlands IPs to smartlink
+  if (country === 'TH' || country === 'NL') {
+    return NextResponse.redirect('https://t.acrsmartcam.com/254877/3664/0?bo=2779,2778,2777,2776,2775&target=domainredirects&po=6533&aff_sub5=SF_006OG000004lmDN')
   }
 
   return NextResponse.next()
