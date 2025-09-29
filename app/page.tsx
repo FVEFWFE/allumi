@@ -1,6 +1,7 @@
 "use client"
 
 import SplashCursor from "@/components/splash-cursor"
+import RollingGallery from "@/components/RollingGallery"
 import { useState, useEffect } from "react"
 
 export default function Home() {
@@ -165,6 +166,14 @@ export default function Home() {
                 Dog mom wannabe 🐕 • Anime addict
               </p>
             </div>
+          </div>
+
+          {/* Rolling Gallery */}
+          <div style={{ marginBottom: '32px' }}>
+            <RollingGallery
+              autoplay={true}
+              pauseOnHover={true}
+            />
           </div>
 
           {/* Primary Adult Platform Links */}
