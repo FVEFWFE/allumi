@@ -387,45 +387,8 @@ export default function Home() {
               <span style={{ fontSize: '18px' }}>→</span>
             </a>
 
-            {/* TikTok */}
-            <a href="https://tiktok.com/@tinyallumi"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '18px',
-                marginBottom: '10px',
-                backgroundColor: 'rgba(0, 0, 0, 0.85)',
-                borderRadius: '12px',
-                textDecoration: 'none',
-                color: 'white',
-                transition: 'all 0.3s ease',
-                border: '2px solid rgba(255, 0, 80, 0.5)',
-                boxShadow: '0 4px 16px rgba(255, 0, 80, 0.3)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 0, 80, 0.5)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(255, 0, 80, 0.3)'
-              }}>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 'bold', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
-                  🎵 TikTok
-                </h3>
-                <p style={{ fontSize: '13px', opacity: 0.9, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
-                  Dance & lifestyle content
-                </p>
-              </div>
-              <span style={{ fontSize: '18px' }}>→</span>
-            </a>
-
             {/* YouTube */}
-            <a href="https://youtube.com/@tinyallumi"
+            <a href="https://youtube.com/@BasPalms"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -451,10 +414,10 @@ export default function Home() {
               }}>
               <div>
                 <h3 style={{ fontSize: '16px', fontWeight: 'bold', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
-                  📺 YouTube
+                  📺 YouTube with my Boyfriend
                 </h3>
                 <p style={{ fontSize: '13px', opacity: 0.9, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
-                  Thailand travel & lifestyle vlogs
+                  Our travel vlogs & behind the scenes
                 </p>
               </div>
               <span style={{ fontSize: '18px' }}>→</span>
