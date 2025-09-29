@@ -387,41 +387,61 @@ export default function Home() {
               <span style={{ fontSize: '18px' }}>→</span>
             </a>
 
-            {/* YouTube */}
-            <a href="https://youtube.com/@BasPalms"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* YouTube with embedded video */}
+            <div
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
+                display: 'block',
                 padding: '18px',
                 marginBottom: '10px',
                 backgroundColor: 'rgba(255, 0, 0, 0.85)',
                 borderRadius: '12px',
-                textDecoration: 'none',
                 color: 'white',
                 transition: 'all 0.3s ease',
                 boxShadow: '0 4px 16px rgba(255, 0, 0, 0.3)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 0, 0, 0.5)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(255, 0, 0, 0.3)'
               }}>
-              <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 'bold', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
-                  📺 YouTube with my Boyfriend
-                </h3>
-                <p style={{ fontSize: '13px', opacity: 0.9, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
-                  Our travel vlogs & behind the scenes
-                </p>
+              <a href="https://youtube.com/@BasPalms"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  textDecoration: 'none',
+                  color: 'white',
+                }}>
+                <div style={{ marginBottom: '12px' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '4px', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                    📺 YouTube with my Boyfriend
+                  </h3>
+                  <p style={{ fontSize: '13px', opacity: 0.9, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
+                    Our travel vlogs & behind the scenes
+                  </p>
+                </div>
+              </a>
+
+              {/* Embedded Video Preview */}
+              <div style={{
+                position: 'relative',
+                paddingBottom: '56.25%', // 16:9 aspect ratio
+                height: 0,
+                overflow: 'hidden',
+                borderRadius: '8px',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)'
+              }}>
+                <iframe
+                  src="https://www.youtube.com/embed/lGOqdgyxOUc?modestbranding=1&rel=0"
+                  title="YouTube video"
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    border: 'none',
+                    borderRadius: '8px'
+                  }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
-              <span style={{ fontSize: '18px' }}>→</span>
-            </a>
+            </div>
           </div>
 
 
