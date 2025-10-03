@@ -90,7 +90,7 @@ export default function Home() {
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)'
           }}>
             <p style={{ color: '#f9a8d4', fontSize: '14px', fontWeight: 'bold', marginBottom: '4px', textShadow: '0 3px 6px rgba(0,0,0,0.95)' }}>
-              🌸 Village Girl in the City • Chasing Dreams 🌸
+              🌸 Southeast Asian Model • Chasing Dreams 🌸
             </p>
             <p style={{ color: '#f3f4f6', fontSize: '12px', textShadow: '0 2px 5px rgba(0,0,0,0.95)' }}>
               Shy but curious • Matcha & anime lover • Your support means everything
@@ -143,7 +143,7 @@ export default function Home() {
               marginBottom: '20px',
               textShadow: '0 3px 6px rgba(0,0,0,0.9)'
             }}>
-              22 • Thai • Village girl 🌾
+              22 • Southeast Asian Creator 🌸
             </p>
             <div style={{ marginBottom: '24px', lineHeight: '1.8' }}>
               <p style={{
@@ -161,8 +161,8 @@ export default function Home() {
                 lineHeight: '1.8',
                 textShadow: '0 2px 4px rgba(0,0,0,0.8)'
               }}>
-                Moved from countryside to Bangkok<br/>
-                Sharing my journey with you<br/>
+                Traveling creator sharing my journey<br/>
+                Living my dreams with your support<br/>
                 Dog mom wannabe 🐕 • Anime addict
               </p>
             </div>
@@ -497,6 +497,48 @@ export default function Home() {
             </a>
           </div>
 
+          {/* Link to POVRiches.ai */}
+          <div style={{
+            marginBottom: '24px',
+            padding: '16px',
+            background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2))',
+            borderRadius: '12px',
+            border: '1px solid rgba(59, 130, 246, 0.3)',
+            textAlign: 'center'
+          }}>
+            <p style={{ color: '#e5e7eb', fontSize: '14px', marginBottom: '8px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>
+              ✨ Want to build your own content empire?
+            </p>
+            <p style={{ color: '#9ca3af', fontSize: '12px', marginBottom: '12px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>
+              Learn the system that helped find me 💕
+            </p>
+            <a href="https://povriches.ai?utm_source=tinyallumi&utm_medium=hub&utm_campaign=allumi_promo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                padding: '10px 20px',
+                background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+                borderRadius: '8px',
+                color: 'white',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)'
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(59, 130, 246, 0.5)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.3)'
+              }}>
+              Join POVRiches.ai (Includes Free Allumi Access)
+            </a>
+          </div>
+
           {/* Footer */}
           <div style={{
             textAlign: 'center',
@@ -509,7 +551,7 @@ export default function Home() {
               © 2025 TinyAllumi • All Rights Reserved
             </p>
             <p style={{ fontSize: '11px', opacity: 0.8, textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
-              Village girl trying her best in the big city 🌾
+              Creating content & chasing dreams around the world 🌸
             </p>
           </div>
         </div>
