@@ -231,7 +231,7 @@ export default function Home() {
             </a>
 
             {/* ManyVids */}
-            <a href="https://www.manyvids.com/Profile/1007434020/TinyAllumi/"
+            <a href="https://www.manyvids.com/Profile/1010344939/tinyallumi/Store/Videos?mobile=true"
               target="_blank"
               rel="noopener noreferrer"
               style={{
