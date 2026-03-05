@@ -1,3 +1,4 @@
+// Allumi payment bridge webhook
 import { NextRequest, NextResponse } from "next/server"
 import { getStripe } from "@/lib/stripe"
 import { createLicenseKey } from "@/lib/license-keys"
