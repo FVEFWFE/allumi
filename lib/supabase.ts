@@ -1,5 +1,6 @@
 import { createClient, SupabaseClient } from "@supabase/supabase-js"
 
+// Lazy-init Supabase admin client for license key operations
 let _supabase: SupabaseClient | null = null
 
 export function getSupabase(): SupabaseClient {
