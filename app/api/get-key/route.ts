@@ -8,19 +8,25 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Missing session_id" }, { status: 400 })
   }
 
-  const data = await getKeyBySessionId(sessionId)
+  try {
+    const data = await getKeyBySessionId(sessionId)
 
-  if (!data) {
-    return NextResponse.json({ pending: true }, { status: 202 })
+    if (!data) {
+      return NextResponse.json({ pending: true }, { status: 202 })
+    }
+
+    const ggUrl = process.env.NEXT_PUBLIC_GG_URL || "https://getgooned.ai"
+
+    return NextResponse.json({
+      key: data.key,
+      tier: data.tier,
+      duration: data.duration,
+      expiresAt: data.expires_at,
+      activationUrl: `${ggUrl}/checkout?tab=card`,
+    })
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Internal error"
+    console.error("[get-key] Error:", message)
+    return NextResponse.json({ error: message }, { status: 500 })
   }
-
-  const ggUrl = process.env.NEXT_PUBLIC_GG_URL || "https://getgooned.ai"
-
-  return NextResponse.json({
-    key: data.key,
-    tier: data.tier,
-    duration: data.duration,
-    expiresAt: data.expires_at,
-    activationUrl: `${ggUrl}/checkout?tab=card`,
-  })
 }
