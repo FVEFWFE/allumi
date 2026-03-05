@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { useParams, useRouter } from "next/navigation"
+import { useParams } from "next/navigation"
 import Link from "next/link"
 import { Lock } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -27,12 +27,12 @@ const planDetails: Record<string, { name: string; price: string; type: "subscrip
 
 export default function CheckoutPage() {
   const params = useParams()
-  const router = useRouter()
   const [email, setEmail] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
 
-  const plan = planDetails[params.plan as string]
+  const planSlug = params.plan as string
+  const plan = planDetails[planSlug]
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -51,11 +51,28 @@ export default function CheckoutPage() {
 
     setIsLoading(true)
 
-    // Simulate payment processing
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: planSlug, email }),
+      })
 
-    // Redirect to success page with email
-    router.push(`/success?email=${encodeURIComponent(email)}`)
+      const data = await res.json()
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong")
+        setIsLoading(false)
+        return
+      }
+
+      if (data.url) {
+        window.location.href = data.url
+      }
+    } catch {
+      setError("Failed to start checkout. Please try again.")
+      setIsLoading(false)
+    }
   }
 
   if (!plan) {
@@ -104,7 +121,7 @@ export default function CheckoutPage() {
             </div>
 
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Processing..." : "Pay with Card"}
+              {isLoading ? "Redirecting to payment..." : "Pay with Card"}
             </Button>
 
             <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
