@@ -45,8 +45,8 @@ export default function SupportPage() {
               <p className="mt-2 text-sm text-muted-foreground">
                 Send us an email and we&apos;ll respond within 24 hours.
               </p>
-              <a href="mailto:support@allumi.app" className="mt-4 inline-block text-sm text-primary hover:underline">
-                support@allumi.app
+              <a href="mailto:support@allumi.to" className="mt-4 inline-block text-sm text-primary hover:underline">
+                support@allumi.to
               </a>
             </div>
 
