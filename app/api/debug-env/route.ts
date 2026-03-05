@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 
+// Force fresh Vercel build - env var debug
 export async function GET() {
   return NextResponse.json({
     has_supabase_url: !!process.env.SUPABASE_URL,
