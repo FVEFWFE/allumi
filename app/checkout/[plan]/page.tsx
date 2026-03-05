@@ -51,11 +51,15 @@ export default function CheckoutPage() {
 
     setIsLoading(true)
 
+    // Read referral code from cookie
+    const refMatch = document.cookie.match(/(?:^|;\s*)gg_ref=([^;]*)/)
+    const referralCode = refMatch ? decodeURIComponent(refMatch[1]) : undefined
+
     try {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan: planSlug, email }),
+        body: JSON.stringify({ plan: planSlug, email, referralCode }),
       })
 
       const data = await res.json()
