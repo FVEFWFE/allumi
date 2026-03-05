@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { stripe, PRICE_MAP } from "@/lib/stripe"
+import { getStripe, PRICE_MAP } from "@/lib/stripe"
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
 
     const origin = request.headers.get("origin") || "https://www.allumi.to"
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       mode: priceConfig.mode,
       line_items: [{ price: priceConfig.priceId, quantity: 1 }],
       customer_email: email || undefined,
