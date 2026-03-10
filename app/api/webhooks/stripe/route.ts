@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { getStripe } from "@/lib/stripe"
 import { createLicenseKey } from "@/lib/license-keys"
 import { sendLicenseKeyEmail } from "@/lib/resend"
+import { getSupabase } from "@/lib/supabase"
 
 export async function POST(request: NextRequest) {
   const body = await request.text()
@@ -67,6 +68,65 @@ export async function POST(request: NextRequest) {
     case "customer.subscription.deleted": {
       const subscription = event.data.object
       console.log(`[Allumi Webhook] Subscription cancelled: ${(subscription as any).id}`)
+      break
+    }
+    case "charge.refunded": {
+      const charge = event.data.object as any
+      const paymentIntentId = charge.payment_intent
+      if (!paymentIntentId) {
+        console.log("[Allumi Webhook] charge.refunded without payment_intent, skipping")
+        break
+      }
+
+      const supabase = getSupabase()
+
+      // Find license key by payment intent
+      const { data: licenseKey } = await (supabase as any)
+        .from("license_keys")
+        .select("id, status, activated_by")
+        .eq("stripe_payment_intent_id", paymentIntentId)
+        .single()
+
+      if (!licenseKey) {
+        console.log(`[Allumi Webhook] No license key for payment_intent ${paymentIntentId}`)
+        break
+      }
+
+      if (licenseKey.status === "revoked") {
+        console.log(`[Allumi Webhook] License key ${licenseKey.id} already revoked`)
+        break
+      }
+
+      // Revoke the license key
+      await (supabase as any)
+        .from("license_keys")
+        .update({ status: "revoked" })
+        .eq("id", licenseKey.id)
+
+      console.log(`[Allumi Webhook] Revoked license key ${licenseKey.id} (charge ${charge.id})`)
+
+      // Downgrade user if they activated this key
+      if (licenseKey.activated_by) {
+        const { data: userProfile } = await supabase
+          .from("users_extended")
+          .select("id, subscription_source")
+          .eq("id", licenseKey.activated_by)
+          .single()
+
+        if (userProfile && userProfile.subscription_source === "allumi") {
+          await supabase
+            .from("users_extended")
+            .update({
+              tier: "free",
+              tier_expires_at: null,
+              subscription_source: null,
+            })
+            .eq("id", licenseKey.activated_by)
+
+          console.log(`[Allumi Webhook] Downgraded user ${licenseKey.activated_by} to free (refund)`)
+        }
+      }
+
       break
     }
   }
